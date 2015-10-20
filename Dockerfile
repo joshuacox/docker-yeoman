@@ -1,7 +1,7 @@
 # Yeoman with some generators and prerequisites
 FROM debian:jessie
 
-MAINTAINER Jakub Głuszecki <jakub.gluszecki@gmail.com>
+MAINTAINER Josh Cox <josh@webhosting.coop>
 
 ENV DEBIAN_FRONTEND noninteractive
 

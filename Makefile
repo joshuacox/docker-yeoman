@@ -1,4 +1,4 @@
-PROJECT 	?= cthulhu666/yeoman
+PROJECT 	?= joshuacox/yeoman
 TAG     	?= latest
 
 ifdef REGISTRY
