@@ -38,5 +38,12 @@ ENTRYPOINT ["set_env.sh"]
 # Always run as the yeoman user
 USER yeoman
 
+# RVM install ruby
+RUN ["/bin/bash", "-c",  "gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3"]
+RUN ["/bin/bash", "-c",  "curl -L get.rvm.io | bash -s stable"]
+RUN ["/bin/bash", "-c",  "echo 'source /home/yeoman/.rvm/scripts/rvm '>>~/.bashrc"]
+RUN ["/bin/bash", "-c",  "source /home/yeoman/.rvm/scripts/rvm ; rvm requirements; rvm install ruby-2.1.4; rvm use --default 2.1.4; source /home/yeoman/.rvm/scripts/rvm"]
+RUN ["/bin/bash", "-c",  "source /home/yeoman/.rvm/scripts/rvm ; rvm use --default 2.1.4; gem install bundler"]
+
 CMD /bin/bash
 
