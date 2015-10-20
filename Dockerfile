@@ -38,7 +38,6 @@ RUN chmod +x /usr/local/sbin/set_env.sh
 ENTRYPOINT ["set_env.sh"]
 
 # Always run as the yeoman user
-RUN chown -R yeoman. /srv/www 
 USER yeoman
 
 # RVM install ruby
