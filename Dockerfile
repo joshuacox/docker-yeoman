@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install node.js, then npm install yo and the generators
 RUN apt-get -yq update && \
     apt-get -yq install git curl net-tools sudo bzip2 libpng-dev locales-all
-RUN apt-get install -yq libavahi-compat-libdnssd-dev vim
+RUN apt-get install -yq libavahi-compat-libdnssd-dev vim keychain
 
 RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
     apt-get -yq install nodejs
