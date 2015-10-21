@@ -19,7 +19,7 @@ RUN npm install -g npm && \
     npm install -g generator-jekyllrb generator-jekyllized
 
 # Add a yeoman user because grunt doesn't like being root
-RUN adduser --disabled-password --gecos "" yeoman && \
+RUN adduser --uid 1001 --disabled-password --gecos "" yeoman && \
   echo "yeoman ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Expose the port
