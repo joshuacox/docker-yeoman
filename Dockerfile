@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install node.js, then npm install yo and the generators
 RUN apt-get -yq update && \
     apt-get -yq install git curl net-tools sudo bzip2 libpng-dev locales-all
-RUN apt-get install -yq libavahi-compat-libdnssd-dev
+RUN apt-get install -yq libavahi-compat-libdnssd-dev vim
 
 RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
     apt-get -yq install nodejs
@@ -46,6 +46,7 @@ RUN ["/bin/bash", "-c",  "curl -L get.rvm.io | bash -s stable"]
 RUN ["/bin/bash", "-c",  "echo 'source /home/yeoman/.rvm/scripts/rvm '>>~/.bashrc"]
 RUN ["/bin/bash", "-c",  "source /home/yeoman/.rvm/scripts/rvm ; rvm requirements; rvm install ruby-2.1.4; rvm use --default 2.1.4; source /home/yeoman/.rvm/scripts/rvm"]
 RUN ["/bin/bash", "-c",  "source /home/yeoman/.rvm/scripts/rvm ; rvm use --default 2.1.4; gem install bundler"]
+# install SPF13 vim
+RUN ["/bin/bash", "-c",  "curl http://j.mp/spf13-vim3 -L -o - | sh"]
 
 CMD /bin/bash
-
